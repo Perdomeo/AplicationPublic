@@ -1,4 +1,4 @@
-name: Perdomeo
+name: Deploy
 
 on:
   push:
