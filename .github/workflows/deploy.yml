@@ -25,7 +25,7 @@ jobs:
           echo "$PRIVATE_KEY" > private_key.pem && chmod 400 private_key.pem
 
           # Nos conectamos a la instancia usando SSH
-          ssh -o StrictHostKeyChecking=no -i private_key.pem ${USER_NAME}@${HOST_NAME} "
+          ssh -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -i private_key.pem ${USER_NAME}@${HOST_NAME} "
             if [ ! -d \"${PROJECT_PATH}/.git\" ]; then
               mkdir -p \$(dirname ${PROJECT_PATH})
               git clone ${GIT_REPO} ${PROJECT_PATH}
